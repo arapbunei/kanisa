@@ -1,0 +1,2 @@
+# kanisa
+Exodus SDA Church 
