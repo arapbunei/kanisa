@@ -4,86 +4,211 @@
   <head>
     <meta charset="utf-8/">
     <title>Exodus Seventh-Day Adventist Church</title>
-    <link rel="stylesheet" href="css/stiles.css" type="text/css">
+   
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet " href="css/bootstrap.min.css" type="text/css ">
-    <link href="css/gall.css" rel="stylesheet" type="text/css" media="all">
-  </head>
+    <link href="csns/gall.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+/* CSS used here will be applied after bootstrap.css */
+html, body {
+  height: 100%;
+}
 
+/*END: Prevent the Navbar from Collapsing*/
+.container-fluid.scrollable {
+  height: 100%;
+  overflow: auto;
+  background: #ccc;
+  width: 50%;
+
+}      
+body{
+  padding: 30px 0;
+  position: relative;
+  padding-top: 15%;
+}
+.gallery {
+  width: 600px;
+  margin: auto;
+  border-radius: 3px;
+  overflow: hidden;
+  //position: relative;
+}
+.img-c {
+  width: 200px;
+  height: 200px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+.img-w {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform ease-in-out 300ms;
+}
+
+.img-w img {
+  display: none;
+}
+.img-c {
+    transition: width ease 400ms, height ease 350ms, left cubic-bezier(0.4, 0, 0.2, 1) 420ms, top cubic-bezier(0.4, 0, 0.2, 1) 420ms;
+}
+
+.img-c:hover .img-w {
+  transform: scale(1.08);
+  transition: transform cubic-bezier(0.4, 0, 0.2, 1) 450ms;
+}
+
+.img-c.active {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  z-index: 2;
+  //transform: translateX(-50%);
+}
+
+.img-c.postactive {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.img-c.active.positioned {
+  left: 0 !important;
+  top: 0 !important;
+  transition-delay: 50ms;
+}
+header {
+    padding-bottom: .3125rem;
+    height: 3.75rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: inset 0 3px 0 rgba(0,0,0,.2);
+    transition: top .15s ease-out;
+    background-color: #fff;
+    z-index: 10000;
+      }
+nav   {
+    background-color: #30A6E6;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+    color: #888;
+    display: block;
+    margin: 8px 22px 8px 22px;
+    overflow: hidden;
+    widdth: 90%;
+    float: right;
+}
+.dropdownmenu ul, .dropdownmenu li {
+  margin: 0;
+  padding: 0;
+}
+.dropdownmenu ul {
+  background: gray;
+  list-style: none;
+  width: 100%;
+}
+.dropdownmenu li {
+  float: left;
+  position: relative;
+  width:auto;
+}
+.dropdownmenu a {
+  background: #30A6E6;
+  color: #FFFFFF;
+  display: block;
+  font: bold 12px/20px sans-serif;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  width: 100%;
+
+}
+.dropdownmenu li:hover a {
+  background: #000000;
+}
+#submenu {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  visibility: hidden;
+  z-index: 1;
+}
+li:hover ul#submenu {
+  opacity: 1;
+  top: 40px;  /* adjust this as per top nav padding top & bottom comes */
+  visibility: visible;
+}
+#submenu li {
+  float: none;
+  width: 100%;
+}
+#submenu a:hover {
+  background: #DF4B05;
+}
+#submenu a {
+  background-color:#000000;
+}
+    </style>
+  </head>
   <body>
     <div class="container">
       <header>
         <a href="#" id="logo"><img src="img/ad.png"  /></a>
-        <nav>
-          <a href="#" id="menu-icon"></a>
+        <nav class="dropdownmenu">
           <ul>
-            <li role="menuitem"><a tabindex="-1" href="index.html">Home</a></li>
-            <li role="menuitem"><a tabindex="-1" href="officials.html">Our Team</a></li>
-            <li role="menuitem"><a tabindex="-1 " href="# " class="current ">Gallery</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Sermons</a>
+              <ul id="submenu">
+                <li><a href="#">Sermon1</a></li>
+                <li><a href="#">sermon2</a></li>
+                <li><a href="#">sermon3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact Us</a></li>
           </ul>
         </nav>
       </header>
-      <div class="clear "></div>
-      <div class="clear "></div>
-
-      <div class="row">
-
-        <div class="items ">
-          <div class="item item1 "><img src="img/1.jpg " height=" "></div>
-          <div class="item item2 "><img src="img/4.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item3 "><img src="img/2.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item4 "><img src="img/y.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item5 "><img src="img/26.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item6 "><img src="img/27.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item7 "><img src="img/28.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item8 "><img src="img/8.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item9 "><img src="img/46.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item10 "><img src="img/41.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item11 "><img src="img/42.jpg " height=" " width=" " alt=" "></div>-->
-          <div class="item item12 "><img src="img/43.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item13 "><img src="img/44.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item14 "><img src="img/el.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item15 "><img src="img/tr.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item16 "><img src="img/eld.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item17 "><img src="img/wm.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item18 "><img src="img/618.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item19 "><img src="img/26.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item20 "><img src="img/27.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item21 "><img src="img/28.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item22 "><img src="img/639.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item23 "><img src="img/32.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item24 "><img src="img/9.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item25 "><img src="img/40.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item23 "><img src="img/121.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item24 "><img src="img/100.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item25 "><img src="img/a.jpg " height=" " width=" " alt=" "></div>
-
-          <div class="item item12 "><img src="img/k.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item13 "><img src="img/j.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item10 "><img src="img/b.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item11 "><img src="img/pf1.jpg " height=" " width=" " alt=" "></div>
-
-          <div class="item item20 "><img src="img/205.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item14 "><img src="img/pf2.jpg " height=" " width=" " alt=" "></div>
-
-          <div class="item item23 "><img src="img/025.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item24 "><img src="img/0003.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item19 "><img src="img/IMG.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item15 "><img src="img/210.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item17 "><img src="img/345.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item18 "><img src="img/348.jpg " height=" " width=" " alt=" "></div>
-
-          <div class="item item16 "><img src="img/944.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item21 "><img src="img/050.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item22 "><img src="img/053.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item25 "><img src="img/154.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item23 "><img src="img/652.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item24 "><img src="img/613.jpg " height=" " width=" " alt=" "></div>
-          <div class="item item25 "><img src="img/707.jpg " height=" " width=" " alt=" "></div>
-        </div>
-
-      </div>
-      <script src="js/index.js "></script>
+  <div class="container-fluid scrollable">  
+  <div class="gallery">
+    <div class="img-w"><img src="img/4.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/3.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/0003.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/6.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/7.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/8.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/2.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/11.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/14.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/23.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/28.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/31.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/40.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/44.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/050.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/100.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/205.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/210.jpg" alt="" /></div>
+    <div class="img-w"><img src="img/abc.jpg" alt="" /></div>
+</div>
+</div>     
+      <script src="js/jquery-1.9.1.min.js"></script>
+       <script src="js/index.js "></script>
       <script src="https://use.fontawesome.com/8c0e284913.js"></script>
       <footer>
         <p>Exodus Seventh-Day Adventist Church-Ex Margaret.</p>
@@ -94,7 +219,7 @@
           <ul class="">
             <li class=""><a href="https:///facebook/" class="">Facebook</a></li>
             <li class=""><a href="https://www./twitter/" class="">Twitter</a></li>
-            <li class=""><a href="https://www./youtube/" class="">YouTube</a></li>
+            <li class=""><a href="https://www./youtube/" class="">Sound Cloud</a></li>
           </ul>
         </nav>
       </footer>
